@@ -1,0 +1,55 @@
+app:
+  id: dynamic-tp-dubbo-demo
+apollo:
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
+    namespaces: application.yml
+  config-service: http://192.168.150.55:8080
+
+
+#Apollo\u914D\u7F6E
+#spring:
+#  application:
+#    name: dynamic-tp-dubbo-demo
+#  datasource:
+#    dynamic:
+#      tp:
+#        enabled: true
+#        enabledBanner: true           # \u662F\u5426\u5F00\u542Fbanner\u6253\u5370\uFF0C\u9ED8\u8BA4true
+#        apollo: # apollo\u914D\u7F6E\uFF0C\u4E0D\u914D\u7F6E\u9ED8\u8BA4\u62FFapollo\u914D\u7F6E\u7B2C\u4E00\u4E2Anamespace
+#          namespace: application.yml
+#        configType: yml               # \u914D\u7F6E\u6587\u4EF6\u7C7B\u578B\uFF0C\u975Ecloud nacos \u548C apollo\u9700\u914D\u7F6E\uFF0C\u5176\u4ED6\u4E0D\u7528\u914D
+#        platforms: # \u901A\u77E5\u62A5\u8B66\u5E73\u53F0\u914D\u7F6E
+#          - platform: wechat
+#            urlKey: 3a700-127-4bd-a798-c53d8b69c     # \u66FF\u6362
+#            receivers: test1,test2                   # \u63A5\u53D7\u4EBA\u4F01\u5FAE\u540D\u79F0
+#          - platform: ding
+#            urlKey: f80dad441fcd655438f4a08dcd6a     # \u66FF\u6362
+#            secret: SECb5441fa6f375d5b9d21           # \u66FF\u6362\uFF0C\u975Esign\u6A21\u5F0F\u53EF\u4EE5\u6CA1\u6709\u6B64\u503C
+#            receivers: 18888888888                   # \u9489\u9489\u8D26\u53F7\u624B\u673A\u53F7
+#          - platform: lark
+#            urlKey: 0d944ae7-b24a-40                 # \u66FF\u6362
+#            receivers: test1,test2                   # \u63A5\u53D7\u4EBA\u98DE\u4E66\u540D\u79F0/openid
+#          - platform: email
+#            receivers: 123456@qq.com,789789@qq.com   # \u6536\u4EF6\u4EBA
+#        dubboTp: # dubbo \u7EBF\u7A0B\u6C60\u914D\u7F6E
+#          - threadPoolName: dubboTp#20880            # \u540D\u79F0\u89C4\u5219\uFF1AdubboTp + "#" + \u534F\u8BAE\u7AEF\u53E3
+#            threadPoolAliasName: \u6D4B\u8BD5\u7EBF\u7A0B\u6C60
+#            corePoolSize: 100
+#            maximumPoolSize: 200
+#            keepAliveTime: 60
+#            notifyItems: # \u62A5\u8B66\u9879\uFF0C\u4E0D\u914D\u7F6E\u81EA\u52A8\u4F1A\u6309\u9ED8\u8BA4\u503C\u914D\u7F6E\uFF08\u53D8\u66F4\u901A\u77E5\u3001\u5BB9\u91CF\u62A5\u8B66\u3001\u6D3B\u6027\u62A5\u8B66\uFF09
+#              - type: capacity                       # \u62A5\u8B66\u9879\u7C7B\u578B\uFF0C\u67E5\u770B\u6E90\u7801 NotifyTypeEnum\u679A\u4E3E\u7C7B
+#                enabled: true
+#                threshold: 80                        # \u62A5\u8B66\u9608\u503C
+#                platforms: [ ding,wechat ]             # \u53EF\u9009\u914D\u7F6E\uFF0C\u4E0D\u914D\u7F6E\u9ED8\u8BA4\u62FF\u4E0A\u5C42platforms\u914D\u7F6E\u7684\u6240\u4EE5\u5E73\u53F0
+#                interval: 120                        # \u62A5\u8B66\u95F4\u9694\uFF08\u5355\u4F4D\uFF1As\uFF09
+#dubbo:
+#  application:
+#    name: dynamic-tp-dubbo-demo
+#  registry:
+#    address: zookeeper://192.168.150.55:2181
+#  scan:
+#    base-packages: cn.zewade.dynamictpdubbodemo.provider
